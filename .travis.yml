@@ -11,7 +11,7 @@ install:
 
 after_script:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker image push "$DOCKER_USERNAME"/udagram-deployment
-- docker image push "$DOCKER_USERNAME"/udagram-api-feed
-- docker image push "$DOCKER_USERNAME"/udagram-api-users
-- docker image push "$DOCKER_USERNAME"/udagram-frontend
+- docker image push ebrugokayer/udagram-deployment
+- docker image push ebrugokayer/udagram-api-feed
+- docker image push ebrugokayer/udagram-api-users
+- docker image push ebrugokayer/udagram-frontend
