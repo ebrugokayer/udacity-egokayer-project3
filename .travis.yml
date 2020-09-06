@@ -1,0 +1,17 @@
+language: minimal
+service: docker
+env:
+  - DOCKER_COMPOSE_VERSION=1.26.2
+before_install:
+- sudo rm /usr/local/bin/docker-compose
+- sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+- sudo chmod +x /usr/local/bin/docker-compose
+install: 
+- docker-compose -f udagram-deployment/docker/docker-compose-build.yaml build --parallel
+
+after_script:
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker image push "$DOCKER_USERNAME"/udagram-deployment
+- docker image push "$DOCKER_USERNAME"/udagram-api-feed
+- docker image push "$DOCKER_USERNAME"/udagram-api-users
+- docker image push "$DOCKER_USERNAME"/udagram-frontend

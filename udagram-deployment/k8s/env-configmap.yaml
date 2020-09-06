@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: udagram-eger-prod
+  AWS_PROFILE: default
+  AWS_REGION: us-east-2
+  JWT_SECRET: Hello
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: udagramgokayer.cwqa4lt4qndx.us-east-2.rds.amazonaws.com
+  DIALECT: postgres
+  URL: http://localhost:8100  
+metadata:
+  name: env-config

@@ -1,0 +1,6 @@
+node_modules/*
+udagram-api/*
+.vscode/*
+udagram-api-feed/node_modules/*
+udagram-api-users/node_modules/*
+udagram-frontend/node_modules/*
